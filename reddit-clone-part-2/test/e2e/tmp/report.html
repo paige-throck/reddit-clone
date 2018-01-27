@@ -1,0 +1,323 @@
+<html><head><meta charset="utf-8"><style>body { font-family: Arial; }ul { list-style-position: inside; }li img { max-width: 100%; }span.passed { padding: 0 1em; color: green; }span.failed { padding: 0 1em; color: red; }span.pending { padding: 0 1em; color: orange; }span.stacktrace { white-space: pre; border: 1px solid rgb(0, 0, 0); font-size: 9pt; padding: 4px; background-color: rgb(204, 204, 204); }</style><script type="text/javascript">function showhide(id) {var e = document.getElementById(id);e.style.display = (e.style.display === "block") ? "none" : "block";}function buildQuickLinks() {var failedSpecs = document.querySelectorAll("li.failed");var quickLinksContainer = document.getElementById("quickLinks");if (!quickLinksContainer) return;if (failedSpecs.length > 0) { document.getElementById("quickLinksHeader").textContent = "Quicklink of Failure"}for (var i = 0; i < failedSpecs.length; ++i) {var li = document.createElement("li");var a = document.createElement("a");a.href = "#" + failedSpecs[i].id;a.textContent = failedSpecs[i].dataset.name + "  (" + failedSpecs[i].dataset.browser + ")";li.appendChild(a);quickLinksContainer.appendChild(li);}}function updatePassCount() {var totalPassed = document.querySelectorAll("li.passed").length;var totalFailed = document.querySelectorAll("li.failed").length;var totalSpecs = totalFailed + totalPassed;console.log("passed: %s, failed: %s, total: %s", totalPassed, totalFailed, totalSpecs);document.getElementById("summaryTotalSpecs").textContent = document.getElementById("summaryTotalSpecs").textContent + totalSpecs;document.getElementById("summaryTotalFailed").textContent = document.getElementById("summaryTotalFailed").textContent + totalFailed;if (totalFailed) {document.getElementById("summary").className = "failed";}}function start() {updatePassCount();buildQuickLinks();}window.onload = start;</script></head><body><h1>Report</h1><div id="summary" class="passed"><h4>Summary</h4><ul><li id="summaryTotalSpecs">Total specs tested: </li><li id="summaryTotalFailed">Total failed: </li></ul></div><ul style="list-style-type:none"><h4>App (13 s)</h4><li id="2cc84e10-fc99-11e7-9d7f-9b7135cdb675" class="passed" data-spec="spec0" data-name="toggles the form" data-browser="chrome"><span class="passed">&#10003;</span><a href="fed135c4105ce83178041f0baf7ad524.png">toggles the form</a>(0.753 s)</li><li id="2cc84e11-fc99-11e7-9d7f-9b7135cdb675" class="failed" data-spec="spec1" data-name="disables the button until the form is valid" data-browser="chrome"><span class="failed">&#10007;</span><a href="576467946d7d29c5c49893273d055360.png">disables the button until the form is valid</a>(2 s)<ul><li>Expected null to equal &#39;true&#39;. [<a href="javascript:showhide('spec1-MacOSX-chrome-63.0.3239.1320')">stack</a>]<br/><span style="display: none" id="spec1-MacOSX-chrome-63.0.3239.1320" class="stacktrace">Error: Failed expectation
+    at PostForm.expectButtonToBeDisabled (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:240:62)
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:24:8)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+    at ControlFlow.promise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+    at schedulerExecute (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7</span></li></ul></li><li id="2cc87520-fc99-11e7-9d7f-9b7135cdb675" class="passed" data-spec="spec2" data-name="changes the validation class names on blur" data-browser="chrome"><span class="passed">&#10003;</span><a href="6f768a17bccaa555827eccdbe2716a4e.png">changes the validation class names on blur</a>(1 s)</li><li id="2cc87521-fc99-11e7-9d7f-9b7135cdb675" class="failed" data-spec="spec3" data-name="creates a post" data-browser="chrome"><span class="failed">&#10007;</span><a href="43ecf307e771978818f88911ae7f22b8.png">creates a post</a>(2 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;) [<a href="javascript:showhide('spec3-MacOSX-chrome-63.0.3239.1320')">stack</a>]<br/><span style="display: none" id="spec3-MacOSX-chrome-63.0.3239.1320" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;)
+    at WebDriverError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:27:5)
+    at NoSuchElementError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:192:5)
+    at elementArrayFinder.getWebElements.then (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:814:27)
+    at ManagedPromise.invokeCallback_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1376:14)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2927:27)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+    at process._tickCallback (internal/process/next_tick.js:109:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:459:27)
+    at ElementArrayFinder.(anonymous function) [as getAttribute] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:91:29)
+    at ElementFinder.(anonymous function) [as getAttribute] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:831:22)
+    at PostForm.expectPostToBeAdded (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:258:54)
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:40:8)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+    at ControlFlow.promise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+    at schedulerExecute (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From: Task: Run it(&quot;creates a post&quot;) in control flow
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
+    at attempt (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4297:26)
+    at QueueRunner.run (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4217:20)
+    at runNext (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4257:20)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4264:13
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4172:9
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2674:10)
+    at shutdownTask_.MicroTask (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2599:53)
+    at MicroTask.asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2728:9)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:35:3)
+    at addSpecsToSuite (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1107:25)
+    at Env.describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1074:7)
+    at describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4399:18)
+    at Object.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:3:1)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
+    at Array.forEach (native)
+    at Jasmine.loadSpecs (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="2cc87522-fc99-11e7-9d7f-9b7135cdb675" class="failed" data-spec="spec4" data-name="allows users to add comments" data-browser="chrome"><span class="failed">&#10007;</span><a href="a3ea590012a35cd80175940512a2737b.png">allows users to add comments</a>(1 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;) [<a href="javascript:showhide('spec4-MacOSX-chrome-63.0.3239.1320')">stack</a>]<br/><span style="display: none" id="spec4-MacOSX-chrome-63.0.3239.1320" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;My Post Title&quot;)
+    at WebDriverError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:27:5)
+    at NoSuchElementError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:192:5)
+    at elementArrayFinder.getWebElements.then (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:814:27)
+    at ManagedPromise.invokeCallback_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1376:14)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2927:27)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+    at process._tickCallback (internal/process/next_tick.js:109:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:459:27)
+    at ElementArrayFinder.(anonymous function) [as click] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:91:29)
+    at ElementFinder.(anonymous function) [as click] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:831:22)
+    at PostForm.expandComments (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:204:73)
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:48:8)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+    at ControlFlow.promise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+    at schedulerExecute (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From: Task: Run it(&quot;allows users to add comments&quot;) in control flow
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
+    at attempt (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4297:26)
+    at QueueRunner.run (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4217:20)
+    at runNext (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4257:20)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4264:13
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4172:9
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2674:10)
+    at shutdownTask_.MicroTask (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2599:53)
+    at MicroTask.asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2728:9)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:43:3)
+    at addSpecsToSuite (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1107:25)
+    at Env.describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1074:7)
+    at describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4399:18)
+    at Object.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:3:1)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
+    at Array.forEach (native)
+    at Jasmine.loadSpecs (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="2cc87523-fc99-11e7-9d7f-9b7135cdb675" class="failed" data-spec="spec5" data-name="clicking on comments only expands a single comments field (not all of them)" data-browser="chrome"><span class="failed">&#10007;</span><a href="36349bcb27c04b1136a8942dfa9a96fd.png">clicking on comments only expands a single comments field (not all of them)</a>(1 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;) [<a href="javascript:showhide('spec5-MacOSX-chrome-63.0.3239.1320')">stack</a>]<br/><span style="display: none" id="spec5-MacOSX-chrome-63.0.3239.1320" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;)
+    at WebDriverError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:27:5)
+    at NoSuchElementError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:192:5)
+    at elementArrayFinder.getWebElements.then (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:814:27)
+    at ManagedPromise.invokeCallback_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1376:14)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2927:27)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+    at process._tickCallback (internal/process/next_tick.js:109:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:459:27)
+    at ElementArrayFinder.(anonymous function) [as sendKeys] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:91:29)
+    at ElementFinder.(anonymous function) [as sendKeys] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:831:22)
+    at PostForm.fillIn (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:196:23)
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:61:8)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+    at ControlFlow.promise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+    at schedulerExecute (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From: Task: Run it(&quot;clicking on comments only expands a single comments field (not all of them)&quot;) in control flow
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
+    at attempt (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4297:26)
+    at QueueRunner.run (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4217:20)
+    at runNext (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4257:20)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4264:13
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4172:9
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2674:10)
+    at shutdownTask_.MicroTask (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2599:53)
+    at MicroTask.asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2728:9)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:53:3)
+    at addSpecsToSuite (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1107:25)
+    at Env.describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1074:7)
+    at describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4399:18)
+    at Object.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:3:1)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
+    at Array.forEach (native)
+    at Jasmine.loadSpecs (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="2cc87524-fc99-11e7-9d7f-9b7135cdb675" class="failed" data-spec="spec6" data-name="allows users to filter" data-browser="chrome"><span class="failed">&#10007;</span><a href="2c851ea1551359a803324472c86e2f9a.png">allows users to filter</a>(2 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;) [<a href="javascript:showhide('spec6-MacOSX-chrome-63.0.3239.1320')">stack</a>]<br/><span style="display: none" id="spec6-MacOSX-chrome-63.0.3239.1320" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;)
+    at WebDriverError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:27:5)
+    at NoSuchElementError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:192:5)
+    at elementArrayFinder.getWebElements.then (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:814:27)
+    at ManagedPromise.invokeCallback_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1376:14)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2927:27)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+    at process._tickCallback (internal/process/next_tick.js:109:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:459:27)
+    at ElementArrayFinder.(anonymous function) [as sendKeys] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:91:29)
+    at ElementFinder.(anonymous function) [as sendKeys] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:831:22)
+    at PostForm.fillIn (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:196:23)
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:83:8)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+    at ControlFlow.promise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+    at schedulerExecute (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From: Task: Run it(&quot;allows users to filter&quot;) in control flow
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
+    at attempt (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4297:26)
+    at QueueRunner.run (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4217:20)
+    at runNext (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4257:20)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4264:13
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4172:9
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2674:10)
+    at shutdownTask_.MicroTask (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2599:53)
+    at MicroTask.asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2728:9)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:75:3)
+    at addSpecsToSuite (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1107:25)
+    at Env.describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1074:7)
+    at describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4399:18)
+    at Object.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:3:1)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
+    at Array.forEach (native)
+    at Jasmine.loadSpecs (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="2cc87525-fc99-11e7-9d7f-9b7135cdb675" class="failed" data-spec="spec7" data-name="allows users to sort" data-browser="chrome"><span class="failed">&#10007;</span><a href="f17be989b4eee76d6e352f9ae642e1ca.png">allows users to sort</a>(1 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;) [<a href="javascript:showhide('spec7-MacOSX-chrome-63.0.3239.1320')">stack</a>]<br/><span style="display: none" id="spec7-MacOSX-chrome-63.0.3239.1320" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;form div,form p&quot;, &quot;Title&quot;)
+    at WebDriverError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:27:5)
+    at NoSuchElementError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:192:5)
+    at elementArrayFinder.getWebElements.then (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:814:27)
+    at ManagedPromise.invokeCallback_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1376:14)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2927:27)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+    at process._tickCallback (internal/process/next_tick.js:109:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:459:27)
+    at ElementArrayFinder.(anonymous function) [as sendKeys] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:91:29)
+    at ElementFinder.(anonymous function) [as sendKeys] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:831:22)
+    at PostForm.fillIn (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:196:23)
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:104:8)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+    at ControlFlow.promise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+    at schedulerExecute (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From: Task: Run it(&quot;allows users to sort&quot;) in control flow
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
+    at attempt (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4297:26)
+    at QueueRunner.run (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4217:20)
+    at runNext (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4257:20)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4264:13
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4172:9
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2674:10)
+    at shutdownTask_.MicroTask (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2599:53)
+    at MicroTask.asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2728:9)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:96:3)
+    at addSpecsToSuite (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1107:25)
+    at Env.describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1074:7)
+    at describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4399:18)
+    at Object.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:3:1)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
+    at Array.forEach (native)
+    at Jasmine.loadSpecs (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li><li id="2cc87526-fc99-11e7-9d7f-9b7135cdb675" class="failed" data-spec="spec8" data-name="allows users to edit" data-browser="chrome"><span class="failed">&#10007;</span><a href="4c2f1cb6346d25e3cfa80218706d0dc9.png">allows users to edit</a>(1 s)<ul><li>Failed: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;To be&quot;) [<a href="javascript:showhide('spec8-MacOSX-chrome-63.0.3239.1320')">stack</a>]<br/><span style="display: none" id="spec8-MacOSX-chrome-63.0.3239.1320" class="stacktrace">NoSuchElementError: No element found using locator: by.cssContainingText(&quot;div[ng-repeat]&quot;, &quot;To be&quot;)
+    at WebDriverError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:27:5)
+    at NoSuchElementError (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/error.js:192:5)
+    at elementArrayFinder.getWebElements.then (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:814:27)
+    at ManagedPromise.invokeCallback_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1376:14)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2927:27)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+    at process._tickCallback (internal/process/next_tick.js:109:7)Error
+    at ElementArrayFinder.applyAction_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:459:27)
+    at ElementArrayFinder.(anonymous function) [as click] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:91:29)
+    at ElementFinder.(anonymous function) [as click] (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/protractor/built/element.js:831:22)
+    at PostForm.clickEdit (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:184:21)
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:117:8)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:112:25
+    at new ManagedPromise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+    at ControlFlow.promise (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+    at schedulerExecute (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+    at TaskQueue.executeNext_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+    at asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From: Task: Run it(&quot;allows users to edit&quot;) in control flow
+    at UserContext.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:94:19)
+    at attempt (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4297:26)
+    at QueueRunner.run (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4217:20)
+    at runNext (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4257:20)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4264:13
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4172:9
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2674:10)
+    at shutdownTask_.MicroTask (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2599:53)
+    at MicroTask.asyncRun (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:2728:9)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/selenium-webdriver/lib/promise.js:668:7
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:112:3)
+    at addSpecsToSuite (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1107:25)
+    at Env.describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1074:7)
+    at describe (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:4399:18)
+    at Object.&lt;anonymous&gt; (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/test/e2e/app.test.js:3:1)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)
+    at Function.Module._load (module.js:438:3)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at /Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:93:5
+    at Array.forEach (native)
+    at Jasmine.loadSpecs (/Users/paigethrockmorton/Development/angular/angular-drills/reddit-clone-part-2/node_modules/jasmine/lib/jasmine.js:92:18)</span></li></ul></li></ul><a href="javascript:showhide('2cc89c30-fc99-11e7-9d7f-9b7135cdb675')">Toggle Configuration</a><div class="config" id="2cc89c30-fc99-11e7-9d7f-9b7135cdb675" style="display: none"><h4>Configuration</h4><li>Jasmine version:  2.8.0</li><li>Browser name:  chrome</li><li>Browser version:  63.0.3239.132</li><li>Platform:  Mac OS X</li><li>Javascript enabled:  true</li><li>Css selectors enabled:  true</li></div></body></html>
