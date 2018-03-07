@@ -1,2 +1,2 @@
 # reddit-clone
-A full stack CRUD application created with Angular
+A full stack CRUD application created with Angular, Express and Knex.
