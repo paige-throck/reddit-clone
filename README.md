@@ -1,7 +1,7 @@
 # reddit-clone
 A full stack CRUD application created with Angular, Express and Knex.
 
-The application has full CRUD for both posts and comments associated with the individual posts.
+Users can create, edit, and delete posts along with adding comments, filter posts (by votes, title, author) and vote for posts they like and dislike.
 
 ![alt tag](screenshots/redditCLone.png)
 
